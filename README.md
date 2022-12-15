@@ -2,9 +2,11 @@
 
 In this terraform/aws script we build a setup with an application load balancer. We will end up with following resources:
 
-  - one app load balancer that redirect traffic into two public subnets
-  - two management instances each in a different public subnet
-  - two webserver instances each in a different private subnet
+  - one app load balancer that redirect traffic to two private subnets
+  - two management instances each in a different public subnet that can be used with Ansible and/or another config. tool
+  - two webserver instances each in a different private subnet that will respond to the load balancer requests
+  
+*NAT Gateways, Routers, Databases are abstract but necessary
 
 Prerequisites
 -----------------------
@@ -14,21 +16,21 @@ Prerequisites
 Installation && Running
 -----------------------
 
-Do a git clone of the project:
+1) Do a git clone of the project:
 
 	git clone https://github.com/dcc6fvo/terraform-basic-setup 
 	
-Change key-pair field of aws-instances with your current keys!
+2) Change key info field of aws-instances with your current keys! Subs. the key_name parameter with your own from following files: ./main.tf; ./modules/main.tf; ./management.tf
 
-Access the newly created folder with the git clone command and type the following command:
+3) Access the newly created folder with the git clone command and type the following command:
 
 	terraform init
 
-Then creates an execution plan, which lets you preview the changes that Terraform plans to make to your infrastructure:
+4) Then creates an execution plan, which lets you preview the changes that Terraform plans to make to your infrastructure:
 
   	terraform plan
   
-Finally, the command that executes the actions proposed in a terraform plan (it is used to deploy your infrastructure):
+5) Finally, the command that executes the actions proposed in a terraform plan (it is used to deploy your infrastructure):
 
   	terraform apply -auto-approve
 
