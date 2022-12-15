@@ -22,22 +22,22 @@ Installation && Running
 
 1) Do a git clone of the project:
 
-	git clone https://github.com/dcc6fvo/terraform-basic-setup 
+		git clone https://github.com/dcc6fvo/terraform-basic-setup 
 	
 2) Change key info field of aws-instances with your current keys! Subs. the key_name parameter with your own from following files: ./main.tf; ./modules/main.tf; ./management.tf
 
 3) Access the newly created folder with the git clone command and type the following command:
 
-	terraform init
+		terraform init
 
 4) Then creates an execution plan, which lets you preview the changes that Terraform plans to make to your infrastructure:
-
-  	terraform plan
+  
+  		terraform plan
   
 5) Finally, the command that executes the actions proposed in a terraform plan (it is used to deploy your infrastructure):
 
-  	terraform apply -auto-approve
+		terraform apply -auto-approve
 
 To destroy all the configurations:
 
-	terraform destroy
+		terraform destroy
