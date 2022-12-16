@@ -6,7 +6,7 @@ In this terraform/aws script we build a setup with an application load balancer.
   - two management instances each in a different public subnet that can be used with Ansible and/or another config. tool
   - two webserver instances each in a different private subnet that will respond to the load balancer requests
   
-*NAT Gateways, Routers, Databases are abstract but necessary
+*NAT Gateways, Routers, Databases were abstract from the design but necessary
 
 <p align="center">
   <img src="img/terraform-app-load-balance.drawio.png" alt="Advanced real world example of vagrant and virtualbox configuration">
