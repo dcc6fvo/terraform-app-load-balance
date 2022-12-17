@@ -6,7 +6,7 @@ In this terraform/aws script we build a setup with an application load balancer.
   - two management instances each in a different public subnet that can be used with Ansible and/or another config. tool
   - two webserver instances each in a different private subnet that will respond to the load balancer requests
   
-*NAT Gateways, Routers, Databases were abstract from the design but necessary
+*NAT Gateways, Routers, Databases were abstract from the design but are necessary
 
 <p align="center">
   <img src="img/terraform-app-load-balance.drawio.png" alt="Advanced real world example of vagrant and virtualbox configuration">
@@ -22,7 +22,7 @@ Installation && Running
 
 1) Do a git clone of the project:
 
-		git clone https://github.com/dcc6fvo/terraform-basic-setup 
+		git clone https://github.com/dcc6fvo/terraform-app-load-balance
 	
 2) Change key info field of aws-instances with your current keys! Subs. the key_name parameter with your own from following files: ./main.tf; ./modules/main.tf; ./management.tf
 
